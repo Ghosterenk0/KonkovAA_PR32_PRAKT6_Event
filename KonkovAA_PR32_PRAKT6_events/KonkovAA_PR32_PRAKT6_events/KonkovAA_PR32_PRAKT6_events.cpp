@@ -14,6 +14,9 @@ class HandlersList {
     Node* tail;
 
 public:
+
+    HandlersList() : head(nullptr), tail(nullptr) {}
+    
     void push_back(void(*Handler)(const string&)) {
         Node* node = new Node(Handler);
         if (tail == nullptr) {
@@ -69,3 +72,4 @@ int main()
     triggerEvent(sys, "User");
     triggerEvent(sys, "Error");
 }
+
